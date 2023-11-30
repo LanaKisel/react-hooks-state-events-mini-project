@@ -1,17 +1,17 @@
 import React from "react";
 
 
-function Task({tasks, deleteTheTask}) {
+function Task({text, category, deleteTheTask}) {
 
-  function handleClick(e) {
-    deleteTheTask(e.target.id)    
+  function handleClick() {
+    deleteTheTask(text)    
   }
 
   return (
-    <div className="task" key={tasks.text}>
-      <div className="label">{tasks.category}</div>
-      <div className="text">{tasks.text}</div>
-      <button className="delete" id={tasks.text} onClick={handleClick}>X</button>
+    <div className="task" >
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button className="delete" onClick={handleClick}>X</button>
     </div>
   );
 }
